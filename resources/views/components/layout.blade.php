@@ -13,17 +13,18 @@
 <body>
     <main class='w-full h-[100vh] bg-gray-100'>
         <header class='w-full bg-gray-800'>
-            <nav class='w-full py-4'>
+            <nav class='py-4'>
                 <ul class='flex justify-center text-white gap-x-8'>
-                    <li><x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link></li>
-                    <li><x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link></li>
-                    <li><x-nav-link href="/contacts" :active="request()->is('contacts')">Contacts</x-nav-link></li>
+                    <li><x-nav-link href="/" :active="request()->is('/')">Главная</x-nav-link></li>
+                    <li><x-nav-link href="/about" :active="request()->is('about')">О нас</x-nav-link></li>
+                    <li><x-nav-link href="/contacts" :active="request()->is('contacts')">Контакты</x-nav-link></li>
+                    <li><x-nav-link href="/jobs" :active="request()->is('jobs')">Вакансии</x-nav-link></li>
                 </ul>
             </nav>
         </header>
 
-        <section class="w-[80vw] h-full mx-auto">
-            {{ $header_title }}
+        <section class="w-[80vw] mx-auto">
+            {{ $page_content }}
         </section>
     </main>
 </body>

@@ -1,9 +1,13 @@
 <x-layout>
 
-    <x-slot:header_title>
-        <div class='flex justify-center items-center h-full'>
-            <h1 class='text-4xl '>Home Page</h1>
+    <x-slot:page_content>
+        <div class='flex justify-center items-center h-[4rem]'>
+            <h1 class='text-4xl '>Страница баннер</h1>
         </div>
-    </x-slot:header_title>
+
+        <p class='text-xl'>
+            {{ $greeting }}, меня зовут {{ $name }}!!!
+        </p>
+    </x-slot:page_content>
 
 </x-layout>
