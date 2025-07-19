@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
 $jobs = [
@@ -20,37 +21,13 @@ Route::get('/contacts', function () {
     return view('contacts');
 });
 
-Route::get('/jobs', function () use ($jobs) {
-    return view('jobs', ['jobs' => $jobs]);
+Route::get('/jobs', function () {
+    return view('jobs', ['jobs' => Job::all()]);
 });
 
-// Route::get('/jobs/{id}', function ($id) use ($jobs) {
-//     $currentJob = null;
+Route::get('/jobs/{id}', function ($id) {
 
-//     // dd($id, $jobs);
-
-//     foreach ($jobs as $job) {
-//         if ($job['id'] === (int) $id) {
-//             $currentJob = [...$job];
-//             break;
-//         }
-//     };
-
-//     if (!$currentJob) {
-//         abort(404);
-//     };
-
-//     return view('job', ['job' => $currentJob]);
-// });
-
-Route::get('/jobs/{id}', function ($id) use ($jobs) {
-
-    $job = Arr::first($jobs, fn($job) => $job['id'] === (int) $id);
-
-    // Пока выкидываем код ошибки (404) для обработки Laravel по умолчанию
-    if (!$job) {
-        abort(404);
-    }
+    $job = Job::find($id);
 
     return view('job', ['job' => $job]);
 });

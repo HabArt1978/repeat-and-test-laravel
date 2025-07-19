@@ -5,7 +5,7 @@
             <h1 class='text-4xl '>Страница баннер</h1>
         </div>
 
-        <p class='text-xl'>
+        <p class='text-xl text-center mt-14'>
             {{ $greeting }}, меня зовут {{ $name }}!!!
         </p>
     </x-slot:page_content>

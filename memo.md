@@ -12,3 +12,9 @@ sail up -d
 sail npm run dev
 
 ```
+
+## Создание модели
+
+```sh
+sail artisan make:model Job
+```
