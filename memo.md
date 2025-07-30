@@ -35,3 +35,23 @@ sail artisan make:migration
 
 -   после чего в прописываем имя миграции ( create_job_listings_table )
 -   для добавления данной таблицы в базу данных ( sail artisan migrate )
+
+## ORM Eloquent
+
+-   all();
+-   find();
+
+```sh
+ sail artisan tinker
+
+> App\Models\Job::create(['title' => 'Разработчик на JavaScript', 'salary' => '90,000']);
+
+   Illuminate\Database\Eloquent\MassAssignmentException  Add [title] to fillable property to allow mass assignment on [App\Models\Job].
+```
+
+-   важно!!! Защита от массового присваивания ( fillable property ) // После предупреждения перезапустить tinker
+
+## Проверить, поддерживает ли контейнер Sail нужные локали !!!
+
+-   Если вы используете Laravel Sail (Docker), локаль должна быть настроена внутри контейнера,
+-   иначе кириллица не будет отображаться корректно в tinker.

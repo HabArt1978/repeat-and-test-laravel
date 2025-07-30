@@ -2,13 +2,13 @@
 
     <x-slot:page_content>
         <div class='flex justify-center items-center h-[4rem]'>
-            <h1 class='text-4xl '>Вакансия - {{ $job['job'] }}</h1>
+            <h1 class='text-4xl '>Вакансия - {{ $job['title'] }}</h1>
         </div>
 
         <p class='text-lg font-medium'>Вакансия № {{ $job['id'] }}</p>
 
         <p class='text-xl font-medium mt-2'>
-            - {{ mb_ucfirst($job['job']) }} : {{ $job['salary'] }}
+            - {{ mb_ucfirst($job['title']) }} : {{ $job['salary'] }}
         </p>
 
         <div class='w-full h-2 border-b-2 mt-2' />
