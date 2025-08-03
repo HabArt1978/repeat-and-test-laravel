@@ -10,8 +10,8 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
-    <main class='w-full h-[100vh] bg-gray-100'>
+<body class='w-full h-full bg-gray-100'>
+    <main>
         <header class='w-full bg-gray-800'>
             <nav class='py-4'>
                 <ul class='flex justify-center text-white gap-x-8'>

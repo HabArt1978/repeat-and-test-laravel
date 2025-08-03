@@ -8,7 +8,7 @@
         <p class='text-lg font-medium'>Вакансия № {{ $job['id'] }}</p>
 
         <p class='text-xl font-medium mt-2'>
-            - {{ mb_ucfirst($job['title']) }} : {{ $job['salary'] }}
+            - {{ mb_ucfirst($job['title']) }} : {{ $job['salary'] }} т.р.
         </p>
 
         <div class='w-full h-2 border-b-2 mt-2' />

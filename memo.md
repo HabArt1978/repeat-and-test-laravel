@@ -55,3 +55,11 @@ sail artisan make:migration
 
 -   Если вы используете Laravel Sail (Docker), локаль должна быть настроена внутри контейнера,
 -   иначе кириллица не будет отображаться корректно в tinker.
+
+## Связывание id ( Jobs / Employers ),
+
+```sh
+sail artisan tinker
+Psy Shell v0.12.9 (PHP 8.4.10 — cli) by Justin Hileman
+> App\Models\Employer::factory(10)->create()->each(fn($employer)=>\App\Models\Job::factory(10)->create(['employer_id' => $employer->id]));
+```

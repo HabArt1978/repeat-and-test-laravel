@@ -11,7 +11,7 @@
                     class="text-lg text-blue-800 font-medium mt-2 hover:underline hover:text-blue-600">
                     <a href="/jobs/{{ $job['id'] }}">
                         <p>{{ mb_ucfirst($job['title']) }} : ЗП -
-                            {{ $job['salary'] }}</p>
+                            {{ $job['salary'] }} т.р.</p>
                     </a>
 
                 </li>
