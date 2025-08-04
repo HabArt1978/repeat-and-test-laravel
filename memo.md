@@ -58,6 +58,8 @@ sail artisan make:migration
 
 ## Связывание id ( Jobs / Employers ),
 
+-   создание 10 вакансий для каждого из 10 работодателей
+
 ```sh
 sail artisan tinker
 Psy Shell v0.12.9 (PHP 8.4.10 — cli) by Justin Hileman
