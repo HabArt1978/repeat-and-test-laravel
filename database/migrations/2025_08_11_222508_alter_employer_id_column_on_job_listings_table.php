@@ -11,12 +11,8 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('job_listings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Employer::class);
-            $table->string('title');
-            $table->string('salary');
-            $table->timestamps();
+        Schema::table('job_listings', function (Blueprint $table) {
+            $table->foreignIdFor(Employer::class)->change()->constrained()->cascadeOnDelete();
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_listings');
+        Schema::table('job_listings', function (Blueprint $table) {
+            $table->foreignIdFor(Employer::class)->change();
+        });
     }
 };
