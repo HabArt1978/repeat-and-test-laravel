@@ -2,10 +2,10 @@
 
     <x-slot:page_content>
         <div class='flex justify-center items-center h-[4rem]'>
-            <h1 class='text-4xl '>О нас</h1>
+            <h1 class='text-4xl text-gray-300'>О нас</h1>
         </div>
 
-        <div class='w-4xl mx-auto mt-4'>
+        <div class='w-4xl mx-auto mt-4 text-gray-300'>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quo ullam nemo
                 repellendus itaque? Nam ducimus debitis quae earum iste porro quidem quos, eligendi
                 labore sunt quis ut commodi praesentium animi culpa a dolor voluptates est nisi.

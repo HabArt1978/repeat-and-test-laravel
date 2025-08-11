@@ -10,7 +10,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class='w-full h-full bg-gray-100'>
+<body class='w-full h-full bg-gray-700'>
     <main>
         <header class='w-full bg-gray-800'>
             <nav class='py-4'>

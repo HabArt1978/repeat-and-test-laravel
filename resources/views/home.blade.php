@@ -2,10 +2,10 @@
 
     <x-slot:page_content>
         <div class='flex justify-center items-center h-[4rem]'>
-            <h1 class='text-4xl '>Страница баннер</h1>
+            <h1 class='text-4xl text-gray-300'>Страница баннер</h1>
         </div>
 
-        <p class='text-xl text-center mt-14'>
+        <p class='text-xl text-center mt-14 text-gray-300'>
             {{ $greeting }}, меня зовут {{ $name }}!!!
         </p>
     </x-slot:page_content>
