@@ -23,7 +23,7 @@
             </nav>
         </header>
 
-        <section class="w-[80vw] mx-auto">
+        <section class="w-[80vw] mx-auto my-8">
             {{ $page_content }}
         </section>
     </main>

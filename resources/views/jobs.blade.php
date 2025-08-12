@@ -2,18 +2,29 @@
 
     <x-slot:page_content>
         <div class='flex justify-center items-center h-[4rem]'>
-            <h1 class='text-4xl text-gray-300'>Список вакансии</h1>
+            <h1 class='text-4xl text-gray-100'>Список вакансии</h1>
         </div>
 
-        <ul>
+        <ul class="flex flex-wrap mt-8 gap-4 justify-center">
             @foreach ($jobs as $job)
                 <li
-                    class="text-lg text-gray-300 font-medium mt-2 hover:underline hover:text-blue-400">
+                    class="w-[32%] bg-slate-700 text-gray-300 p-4 border-2 border-gray-400 rounded-lg shadow-lg hover:bg-gray-800 transition-color duration-150 hover:border-orange-300 hover:shadow-xl">
                     <a href="/jobs/{{ $job['id'] }}">
-                        <p>{{ mb_ucfirst($job['title']) }} : ЗП -
-                            {{ $job['salary'] }} т.р.</p>
-                    </a>
+                        <div class='flex flex-col'>
+                            <h1 class='text-gray-100 font-medium text-2xl'>
+                                {{ mb_ucfirst($job['title']) }}
+                            </h1>
 
+                            <span class='text-xl'>
+                                от - {{ $job['salary'] }} ₽ за месяц.
+                            </span>
+
+                            <span class='mt-2 text-orange-300'>
+                                {{ $job->employer->name }}
+                            </span>
+                        </div>
+
+                    </a>
                 </li>
             @endforeach
         </ul>
