@@ -123,3 +123,17 @@ Psy Shell v0.12.9 (PHP 8.4.10 — cli) by Justin Hileman
         salary: "38 055",
 
 ```
+
+## Публикация пакета laravel-pagination
+
+```sh
+sail artisan vendor:publish
+
+ ┌ Which provider or tag's files would you like to publish? ────┐
+ │ Tag: laravel-pagination                                      │
+ └──────────────────────────────────────────────────────────────┘
+
+   INFO  Publishing [laravel-pagination] assets.
+
+  Copying directory [vendor/laravel/framework/src/Illuminate/Pagination/resources/views] to [resources/views/vendor/pagination] ............... DONE
+```
