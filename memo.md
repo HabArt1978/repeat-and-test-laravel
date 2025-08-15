@@ -137,3 +137,12 @@ sail artisan vendor:publish
 
   Copying directory [vendor/laravel/framework/src/Illuminate/Pagination/resources/views] to [resources/views/vendor/pagination] ............... DONE
 ```
+
+## Seeders
+
+```sh
+sail artisan db:seed
+sail artisan migrate:fresh --seed
+sail artisan make:seeder
+sail artisan db:seed --class=UserSeeder
+```
