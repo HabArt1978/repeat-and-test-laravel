@@ -10,7 +10,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class='w-full h-full bg-gray-700'>
+<body class='w-screen h-screen bg-gray-700'>
     <main>
         <header class='w-full h-[6vh] bg-gray-800 flex items-center justify-center'>
             <ul class='flex text-white gap-x-8'>
@@ -21,7 +21,7 @@
             </ul>
         </header>
 
-        <section class="flex flex-col w-[80vw] h-[94vh] mx-auto py-4">
+        <section class="flex flex-col w-[80vw] h-[94vh] mx-auto">
             {{ $page_content }}
         </section>
     </main>

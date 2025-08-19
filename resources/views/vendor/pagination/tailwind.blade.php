@@ -32,7 +32,7 @@
 
         <div class="flex-col-reverse hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
-                <p class="text-sm text-gray-700 leading-5 dark:text-gray-300 tracking-wider">
+                <p class="text-sm leading-5 text-gray-300 tracking-wider">
                     {!! __('вакансии с') !!}
                     @if ($paginator->firstItem())
                         <span class="font-medium">{{ $paginator->firstItem() }}</span>
@@ -94,7 +94,7 @@
                                 @if ($page == $paginator->currentPage())
                                     <span aria-current="page">
                                         <span
-                                              class="relative inline-flex items-center px-4 py-2 -ml-px text-lg font-medium text-orange-300 bg-white border border-gray-300 cursor-default leading-5 dark:bg-gray-800 dark:border-gray-600">{{ $page }}</span>
+                                              class="relative inline-flex items-center px-4 py-2 -ml-px text-lg font-medium text-orange-400 bg-white border border-gray-300 cursor-default leading-5 dark:bg-gray-800 dark:border-gray-600">{{ $page }}</span>
                                     </span>
                                 @else
                                     <a href="{{ $url }}"
