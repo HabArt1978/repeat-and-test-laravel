@@ -21,9 +21,8 @@
             </ul>
         </header>
 
-        <section class="flex flex-col w-[80vw] h-[94vh] mx-auto">
-            {{ $page_content }}
-        </section>
+        {{ $page_content }}
+
     </main>
 </body>
 

@@ -12,6 +12,9 @@ class Job extends Model
     protected $table = 'job_listings';
     protected $fillable = ['title', 'salary', 'employer_id'];
 
+    //? Если вы решите снять защиту записи полей с вашей модели, $fillable убираем и определяем массив $guarded как пустой.
+    // protected $guarded = [];
+
     public function employer(): BelongsTo
     {
         return $this->belongsTo(Employer::class);
