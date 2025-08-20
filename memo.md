@@ -170,3 +170,5 @@ sail artisan lang:add ru
 sail artisan config:clear
 sail artisan cache:clear
 ```
+
+## Route Model Binding

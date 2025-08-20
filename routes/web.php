@@ -3,18 +3,9 @@
 use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home', ['greeting' => 'Привет', 'name' => 'Артур']);
-});
-
-Route::get('/about', function () {
-
-    return view('about');
-});
-
-Route::get('/contacts', function () {
-    return view('contacts');
-});
+Route::view('/', 'home', ['greeting' => 'Привет', 'name' => 'Артур']);
+Route::view('/about', 'about');
+Route::view('/contacts', 'contacts');
 
 //========= Jobs CRUD =========//
 //? Index
@@ -28,22 +19,13 @@ Route::get('/jobs', function () {
 });
 
 //? Create
-Route::get('/jobs/create', function () {
-    return view('jobs.create');
-});
+Route::view('/jobs/create', 'jobs.create');
 
 //? Show
-Route::get('/jobs/{id}', function ($id) {
-
-    $job = Job::findOrFail($id);
-
-    return view('jobs.show', ['job' => $job]);
-});
+Route::get('/jobs/{job}', fn(Job $job) => view('jobs.show', compact('job')));
 
 //? Store
 Route::post('/jobs', function () {
-    // dd(request()->all());
-
     request()->validate([
         'job_title' => 'required|string|min:3|max:100',
         'salary' => 'required|string|min:2|max:15'
@@ -59,34 +41,27 @@ Route::post('/jobs', function () {
 });
 
 //? EDIT
-Route::get('/jobs/{id}/edit', function ($id) {
-
-    $job = Job::findOrFail($id);
-
-    return view('jobs.edit', ['job' => $job]);
-});
+Route::get('/jobs/{job}/edit', fn(Job $job) => view('jobs.edit', compact('job')));
 
 //? UPDATE
-Route::patch('/jobs/{id}', function ($id) {
+Route::patch('/jobs/{job}', function (Job $job) {
     request()->validate([
         'job_title' => 'required|string|min:3|max:100',
         'salary' => 'required|string|min:2|max:15'
     ]);
-
-    $job = Job::findOrFail($id);
 
     $job->update([
         'title' => request('job_title'),
         'salary' => request('salary')
     ]);
 
-    return redirect("/jobs/{$id}");
+    return redirect("/jobs/{$job}");
 });
 
 //? DELETE
-Route::delete('/jobs/{id}', function ($id) {
+Route::delete('/jobs/{job}', function ($job) {
 
-    Job::findOrFail($id)->delete();
+    $job->delete();
 
     return redirect("/jobs");
 });
