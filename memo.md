@@ -146,3 +146,27 @@ sail artisan migrate:fresh --seed
 sail artisan make:seeder
 sail artisan db:seed --class=UserSeeder
 ```
+
+## Переключение локали (Русификация).
+
+-   Laravel сам по себе идёт только с английским. Для русского можно использовать пакет локализации:
+
+```sh
+composer require laravel-lang/common --dev
+sail artisan lang:add ru
+```
+
+-   Установить локаль по умолчанию, в файле config/app.php найди параметр:
+
+```sh
+'locale' => env('APP_LOCALE', 'ru'),
+'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+'faker_locale' => env('APP_FAKER_LOCALE', 'ru_RU'),
+```
+
+-   Очистить кеш конфигурации и переводов, чтобы изменения подтянулись:
+
+```sh
+sail artisan config:clear
+sail artisan cache:clear
+```

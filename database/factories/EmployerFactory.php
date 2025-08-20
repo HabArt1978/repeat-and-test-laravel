@@ -17,7 +17,7 @@ class EmployerFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake('ru_RU')->company(),
+            'name' => fake()->company(),
         ];
     }
 }

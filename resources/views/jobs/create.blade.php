@@ -22,19 +22,25 @@
 
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div class="sm:col-span-4">
-                                <label for="title"
+                                <label for='job_title'
                                        class="block text-sm/6 font-medium text-gray-300 tracking-wide">Название
                                     вакансии</label>
                                 <div class="mt-2">
                                     <div
                                          class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
 
-                                        <input id="title"
-                                               type="text"
-                                               name="title"
+                                        <input id='job_title'
+                                               type='text'
+                                               name='job_title'
                                                placeholder="Гладиатор"
-                                               class=" block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 rounded-md placeholder:text-gray-400 focus:outline-none sm:text-sm/6" />
+                                               class="block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 rounded-md placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                                               required />
                                     </div>
+
+                                    @error('job_title')
+                                        <p class='text-red-600 text-xs mt-1'>{{ $message }}
+                                        </p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -50,8 +56,13 @@
                                                type="text"
                                                name="salary"
                                                placeholder="50000"
-                                               class="block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6" />
+                                               class="block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                                               required />
                                     </div>
+
+                                    @error('salary')
+                                        <p class='text-red-600 text-xs mt-1'>{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -60,9 +71,9 @@
 
                 <div class="mt-6 flex items-center justify-end gap-x-6">
                     <button type="button"
-                            class="rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Cancel</button>
+                            class="rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 uppercase tracking-wider">отменить</button>
                     <button type="submit"
-                            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+                            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 uppercase tracking-wider">добавить</button>
                 </div>
             </form>
         </x-page-container>
