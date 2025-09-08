@@ -8,7 +8,7 @@ class JobController extends Controller
 {
     public function index()
     {
-        $jobs = Job::with('employer')->latest()->paginate(12);
+        $jobs = Job::with('employer')->orderByDesc('updated_at')->paginate(12);
 
         // $jobs = Job::with('employer')->simplePaginate(12);
         // $jobs = Job::with('employer')->cursorPaginate(12);
