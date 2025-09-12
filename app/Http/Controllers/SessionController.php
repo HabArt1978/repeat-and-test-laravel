@@ -24,23 +24,28 @@ class SessionController extends Controller
         ]);
 
         // attempt to login the user
-        if (!Auth::attempt($validatedAttributes)) {
-            throw ValidationException::withMessages([
-                'password' => 'Извините, ваши данные на совпадают.'
-            ]);
+        if (Auth::attempt($validatedAttributes)) {
+            //  regenerate the session token
+            $request->session()->regenerate();
+            // redirect
+            return redirect('/');
         }
 
-        // regenerate the session token
-        $request->session()->regenerate();
-
-        // redirect
-        return redirect('/');
+        //
+        return back()->withErrors([
+            'password' => 'Предоставленные учетные данные не соответствуют нашим записям.',
+        ])->onlyInput('password');
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {
+        // https://laravel.com/docs/12.x/authentication#logging-out
         Auth::logout();
 
-        return redirect('/');
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect(route('login'));
     }
 }
