@@ -13,7 +13,7 @@
 <body class='w-screen h-screen bg-gray-700'>
     <main>
         <header class='w-full h-[6vh] bg-gray-800 flex items-center justify-center'>
-            <div class='flex w-[80vw] justify-between'>
+            <div class='flex w-[80vw] justify-between items-center'>
                 <ul class='flex text-white gap-x-8'>
                     <li><x-nav-link href="/" :active="request()->is('/')">Главная</x-nav-link></li>
                     <li><x-nav-link href="/about" :active="request()->is('about')">О нас</x-nav-link></li>
@@ -31,6 +31,13 @@
                                               :active="request()->is('register')">регистрация</x-link-as-button>
                         </li>
                     @endguest
+
+                    @auth
+                        <form method='POST' action="/logout">
+                            @csrf
+                            <x-form.button>выйти</x-form.button>
+                        </form>
+                    @endauth
                 </ul>
             </div>
 

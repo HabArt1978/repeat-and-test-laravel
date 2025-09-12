@@ -2,7 +2,7 @@
 
         <x-slot:page_content>
             <x-page-container>
-                <x-header-page>Авторизация</x-header-page>
+                <x-header-page>Вход в систему</x-header-page>
 
                 <form class="mt-6"
                       method='POST'
@@ -13,10 +13,11 @@
                     <div class="space-y-12">
                         <div class="border-b border-gray-100/10 pb-12">
                             <h2 class="text-base/7 font-semibold text-gray-100 tracking-wider">
-                                Авторизация пользователя
+                                Вход пользователя в систему
                             </h2>
                             <p class="mt-1 text-sm/6 text-gray-300 tracking-wide">
-                                Заполните поля в соответствии с требованиями авторизации.
+                                Заполните поля в соответствии с требованиями аутентификации
+                                пользователя.
                             </p>
 
                             <div class='flex flex-col w-1/2 gap-6 mt-10'>
@@ -29,7 +30,8 @@
                                                   name='email'
                                                   type='email'
                                                   placeholder="example@email.com"
-                                                  required />
+                                                  required
+                                                  :value="old('email')" />
                                     <x-form.error name='email' />
                                 </x-form.field>
 
