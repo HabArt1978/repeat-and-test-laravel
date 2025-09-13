@@ -43,8 +43,6 @@ class JobController extends Controller
     }
     public function edit(Job $job)
     {
-        Gate::authorize('edit-job', $job);
-
         return view('jobs.edit', compact('job'));
     }
     public function update(Request $request, Job $job)
