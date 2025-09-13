@@ -7,8 +7,15 @@
                     Список вакансий
                 </x-header-page>
 
-                <x-link-as-button href='/jobs/create' class='cursor-pointer'>добавить
-                    вакансию</x-link-as-button>
+                @auth
+                    <a href='/jobs/create'
+                       class='cursor-pointer uppercase rounded-md bg-green-800 px-3 py-2
+                         text-sm font-semibold text-white shadow-xs
+                         hover:bg-green-700 focus-visible:outline-2
+                         focus-visible:outline-offset-2 focus-visible:outline-green-800'>добавить
+                        вакансию</a>
+                @endauth
+
             </div>
 
 
