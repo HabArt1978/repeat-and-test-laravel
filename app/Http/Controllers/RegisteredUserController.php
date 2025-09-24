@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules\Password;
 
 class RegisteredUserController extends Controller
@@ -34,7 +35,17 @@ class RegisteredUserController extends Controller
         ]);
 
         // create user
-        $newUser = User::create($validatedAttributes);
+        $newUser = DB::transaction(function () use ($validatedAttributes) {
+            $newUser = User::create($validatedAttributes);
+
+            $newUser->employer()->create([
+                'name' => "ИП: {$validatedAttributes['first_name']} {$validatedAttributes['last_name']}"
+            ]);
+
+            return $newUser;
+        });
+
+
 
         // log in
         Auth::login($newUser);

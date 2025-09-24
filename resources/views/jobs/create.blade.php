@@ -22,15 +22,15 @@
 
                         <div class='flex flex-col w-1/2 gap-6 mt-10'>
                             <x-form.field>
-                                <x-form.label for='job_title'>
+                                <x-form.label for='title'>
                                     Название вакансии
                                 </x-form.label>
-                                <x-form.input id='job_title'
-                                              name='job_title'
+                                <x-form.input id='title'
+                                              name='title'
                                               placeholder="Гладиатор"
                                               required />
 
-                                <x-form.error name='job_title' />
+                                <x-form.error name='title' />
                             </x-form.field>
 
                             <x-form.field>

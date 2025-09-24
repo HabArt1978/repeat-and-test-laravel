@@ -26,12 +26,14 @@
                                     <x-form.label for='email'>
                                         Электронная почта
                                     </x-form.label>
-                                    <x-form.input id='email'
-                                                  name='email'
+
+                                    <x-form.input name='email'
+                                                  id='email'
                                                   type='email'
+                                                  :value="old('email')"
                                                   placeholder="example@email.com"
-                                                  required
-                                                  :value="old('email')" />
+                                                  required />
+
                                     <x-form.error name='email' />
                                 </x-form.field>
 

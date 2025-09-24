@@ -24,15 +24,14 @@ class JobController extends Controller
     }
     public function store(Request $request)
     {
-        $request->validate([
-            'job_title' => 'required|string|min:3|max:100',
+        $validatedAttributes = $request->validate([
+            'title' => 'required|string|min:3|max:100',
             'salary' => 'required|string|min:2|max:15'
         ]);
 
         Job::create([
-            'title' => request('job_title'),
-            'salary' => request('salary'),
-            'employer_id' => 1,
+            ...$validatedAttributes,
+            'employer_id' => $request->user()->employer->id,
         ]);
 
         return redirect('/jobs');

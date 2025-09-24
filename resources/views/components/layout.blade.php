@@ -33,10 +33,20 @@
                     @endguest
 
                     @auth
-                        <form method='POST' action="/logout">
-                            @csrf
-                            <x-form.button>выйти</x-form.button>
-                        </form>
+                        <div class='flex gap-4 items-center tracking-wider'>
+                            <p class='flex flex-col'>
+                                <span>пользователь: {{ Auth::user()->email }}</span>
+                                <span class="text-sm text-orange-300">организация:
+                                    {{ Auth::user()->employer->name }}</span>
+                            </p>
+
+                            <form method='POST' action="/logout">
+                                @csrf
+                                <x-form.button>выйти</x-form.button>
+                            </form>
+                        </div>
+
+
                     @endauth
                 </ul>
             </div>

@@ -33,8 +33,8 @@ class SessionController extends Controller
 
         //
         return back()->withErrors([
-            'password' => 'Предоставленные учетные данные не соответствуют нашим записям.',
-        ])->onlyInput('password');
+            'email' => 'Предоставленные учетные данные не соответствуют нашим записям.',
+        ])->onlyInput('email');
     }
 
     public function destroy(Request $request)
