@@ -171,4 +171,27 @@ sail artisan config:clear
 sail artisan cache:clear
 ```
 
-## Route Model Binding
+## Локальная отправка Email
+
+### Локальный SMTP сервер для перехвата писем
+
+Можно воспользоваться программой [Mailpit](https://mailpit.axllent.org/docs/install/docker/)
+Конфигурация по умолчанию указана в .env.example, конфигурация по умолчанию уже добавлена в docker.compose.yml (сервис mailpit).
+
+По умолчанию веб-интерфейс Mailpit доступен на http://localhost:8025.
+
+### Класс письма Laravel
+
+Для отправки письма нужен Mailable класс и blade шаблон, команда для создания:
+
+```sh
+sail artisan make:mail --view <emailable_class_name>
+```
+
+### Artisan команда для тестовой отправки письма
+
+Для того чтобы не писать тестовый эндпоинт, можно создать [консольную команду](https://laravel.com/docs/12.x/artisan#writing-commands) к которой не будет доступа у пользователя сайта. Создать можно так:
+
+```sh
+sail artisan make:command <command_class_name>
+```
