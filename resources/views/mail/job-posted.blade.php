@@ -1,9 +1,12 @@
-<div>
-    <h2>Вакансия: {{ $job->title }}</h2>
+<x-mail>
+    <div>
+        <h2 class="text-2xl">Вакансия: {{ $job->title }}</h2>
 
-    <p>Отлично! Ваша вакансия "{{ $job->title }}" размещена на нашем сайте.</p>
+        <p class="font-black">Отлично! Ваша вакансия "{{ $job->title }}" размещена на нашем сайте.
+        </p>
 
-    <p>
-        <a href="{{ url('/jobs/' . $job->id) }}">Посмотреть вакансию</a>
-    </p>
-</div>
+        <p>
+            <a class="text-blue-900" href="{{ url('/jobs/' . $job->id) }}">Посмотреть вакансию</a>
+        </p>
+    </div>
+</x-mail>
