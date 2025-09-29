@@ -3,6 +3,7 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\DeliveryOfEmails;
 use App\Mail\JobPosted;
 use App\Models\Job;
 use Illuminate\Support\Facades\Mail;

@@ -195,3 +195,17 @@ sail artisan make:mail --view <emailable_class_name>
 ```sh
 sail artisan make:command <command_class_name>
 ```
+
+## Очереди ( Queues )
+
+### Artisan команда для создания класса задания ( для очереди ).
+
+```sh
+sail artisan make:job
+```
+
+### Artisan команда для запуска обработки очередей
+
+```sh
+sail artisan queue:work
+```
